@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+	{% if msg %}
+	<div id="msg"><p>{{ msg }}</p></div>
+	{% endif %}
+	<form id="register-form" method="post">
+		<p>입력하신 ID를 white-list에 등록합니다.</p>
+		<label>User ID: <input name="mcid" type="text" placeholder="your Minecraft ID">
+		<input name="register" type="submit" value="등록">
+	</form>
+{% endblock %}

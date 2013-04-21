@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+	<p>
+		{{ status.motd }}
+	</p>
+	<h2>서버 상태</h2>
+	<table id="server-status">
+		<tr>
+			<th>버전</th>
+			<td>{{ status.version }}</td>
+		</tr>
+		<tr>
+			<th>온라인 여부</th>
+			<td>{% if status.online %}Online{% else %}Offline{% endif %}</td>
+		</tr>
+		<tr>
+			<th>활성화된 플러그인</th>
+			<td>{% if status.plugins %}{{ status.plugins }}{% else %}(없음){% endif %}</td>
+		</tr>
+		<tr>
+			<th>접속 인원수</th>
+			<td>{{ status.num_players }} / {{ status.max_players }}</td>
+		</tr>
+		<tr>
+			<th>전체 지도 보기</th>
+			<td><a href="/overview/">Minecraft Overview</a></td>
+		</tr>
+	</table>
+	<h2>서버 이용 안내</h2>
+	<ul>
+		<li>현재 이 서버는 <a href="http://sparcs.kaist.ac.kr">SPARCS</a> 회원들을 대상으로 운영하고 있습니다. <a href="/register">자신의 ID를 등록하세요.</a></li>
+		<li>이 서버는 vanilla (제작사가 배포한 그대로의) Minecraft client로도 똑같이 이용할 수 있지만, 성능 향상을 위한 <a href="https://www.google.co.kr/search?q=minecraft+optifine">OptiFine mod</a>을 적용하기를 권장합니다.</li>
+	</ul>
+	<h2>서버 이용 규칙</h2>
+	<ol>
+		<li>이 서버는 <strong>Survival 전용</strong>으로 운영됩니다.</li>
+		<li>다른 사용자를 공격할 수 있는 PVP 기능은 꺼져있습니다.</li>
+		<li>다른 사람이 만든 건축물의 block을 당사자의 허락 없이 변경하거나 파괴하면 안 됩니다.</li>
+		<li>다른 사람의 chest로부터 허락 없이 아이템을 가져가면 안 됩니다.</li>
+		<li>각자 자신의 건축물 주변에는 monster들이 나타나지 않도록 충분한 양의 횃불을 설치하거나 적절한 방어물을 건설해주세요. 그렇게 하지 않아 발생한 사고(크리퍼 펑!)는 책임지지 않습니다.</li>
+		<li>각자가 만든 건축물에는 누가 만든 것인지 알 수 있도록 sign을 붙여주세요. 서버에 문제가 생겼을 경우 또는 마인크래프트 버전 업데이트로 맵을 새로 생성해야 하는 경우 백업·복원을 위해 미리 알 수 있도록 하기 위함입니다.
+			<ul>
+			<li>건축물 단위로 백업·복원하는 경우 해당 건축물 내에 있던 chest의 내용도 그대로 보존됩니다. 단, 서버 장애로 인한 복구가 아닌 맵 리셋의 경우 survival 전용 서버임을 고려하여 chest를 제거합니다.
+			<li>맵 전체를 새로 생성하는 경우 사용자 의견에 따라 player inventory를 보존해드릴 수도 있고 리셋하거나 특정 아이템을 사전 지급할 수도 있습니다.
+			</ul>
+		<li>이 서버는 Minecraft 정식 라이선스를 구매한 사람들의 접속만 허용합니다. (Online mode)</li>
+		<li>이 외의 사항들은 상식에 준하는 선에서 서로의 도의를 지켜주시기 바랍니다.</li>
+		<li>운영자의 재량으로 임의의 사용자를 kick (강제 퇴장) 또는 ban (영구 차단) 할 수 있습니다.</li>
+		<li>운영자의 재량으로 서버를 임의의 시점에 재시작하거나 플러그인 다시 불러오기를 수행할 수 있습니다. (가급적 사람이 적을 때, 미리 메시지로 알려줍니다만 불가피한 경우도 있을 수 있음을 알려드립니다.)</li>
+		<li>운영자는 스스로의 능력과 시간이 허락하는 범위 내에서 서버의 백업과 안정적인 운영을 위해 노력하지만 이를 보장하지는 않습니다.</li>
+		<li>사용자들간의 원활한 의사소통을 위해 IRC 채널(ozinger.org 서버의 #sparcs) 또는 메일링 리스트(minecraft)를 적극 활용합시다.</li>
+	</ol>
+{% endblock %}
